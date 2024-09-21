@@ -14,7 +14,7 @@ const ChatUI = () => {
 
     try {
       // Send user message to the server
-      const response = await axios.post("http://localhost:3000/ask-ai", {
+      const response = await axios.post("http://13.60.22.232:8080/ask-ai", {
         input: input,
       });
 
