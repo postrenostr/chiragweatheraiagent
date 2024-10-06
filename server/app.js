@@ -62,7 +62,6 @@ async function communicateWithLlama(input) {
 
     if (response.status === 200) {
       response.data.answer = response.data.response;
-      console.log("response : ", response.data);
       return response.data;
     } else {
       return `{"answer": "Sorry! Something went wrong."}`;
@@ -80,6 +79,8 @@ app.post("/ask-ai", async (req, res) => {
   try {
     // Get Llama response
     const llamaResponse = await communicateWithLlama(input);
+
+    console.log("str : ", llamaResponse.response);
 
     let llamaResponseObj = extractJsonArray(llamaResponse.response);
 
